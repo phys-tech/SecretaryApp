@@ -31,18 +31,9 @@
             this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.CarouselEllipsePath carouselEllipsePath1 = new Telerik.WinControls.UI.CarouselEllipsePath();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.pageViewMain = new Telerik.WinControls.UI.RadPageView();
             this.pageMail = new Telerik.WinControls.UI.RadPageViewPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.carouselPhotos = new Telerik.WinControls.UI.RadCarousel();
             this.radImageButtonElement1 = new Telerik.WinControls.UI.RadImageButtonElement();
@@ -56,7 +47,6 @@
             this.pageContacts = new Telerik.WinControls.UI.RadPageViewPage();
             this.gridViewContacts = new Telerik.WinControls.UI.RadGridView();
             this.panelLogo = new Telerik.WinControls.UI.RadPanel();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.customShape1 = new Telerik.WinControls.OldShapeEditor.CustomShape();
             this.highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
@@ -66,7 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).BeginInit();
             this.pageViewMain.SuspendLayout();
             this.pageMail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carouselPhotos)).BeginInit();
             this.pageGallery.SuspendLayout();
@@ -79,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewContacts.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).BeginInit();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -93,7 +81,7 @@
             this.pageViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageViewMain.Location = new System.Drawing.Point(0, 104);
             this.pageViewMain.Name = "pageViewMain";
-            this.pageViewMain.SelectedPage = this.pageMail;
+            this.pageViewMain.SelectedPage = this.pageContacts;
             this.pageViewMain.Size = new System.Drawing.Size(1014, 584);
             this.pageViewMain.TabIndex = 2;
             this.pageViewMain.Text = "PageView Main";
@@ -106,7 +94,6 @@
             // pageMail
             // 
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
-            this.pageMail.Controls.Add(this.dataGridView1);
             this.pageMail.Controls.Add(this.radLabel1);
             this.pageMail.Controls.Add(this.carouselPhotos);
             this.pageMail.Location = new System.Drawing.Point(10, 37);
@@ -114,19 +101,11 @@
             this.pageMail.Size = new System.Drawing.Size(993, 536);
             this.pageMail.Text = "Почта";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(171, 246);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(702, 253);
-            this.dataGridView1.TabIndex = 4;
-            // 
             // radLabel1
             // 
             this.radLabel1.EnableTheming = false;
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel1.Location = new System.Drawing.Point(611, 36);
+            this.radLabel1.Location = new System.Drawing.Point(346, 233);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(328, 25);
             this.radLabel1.TabIndex = 3;
@@ -266,6 +245,7 @@
             // 
             // gridViewContacts
             // 
+            this.gridViewContacts.AllowDrop = true;
             this.gridViewContacts.BackColor = System.Drawing.Color.White;
             this.gridViewContacts.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridViewContacts.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -278,46 +258,11 @@
             // gridViewContacts
             // 
             this.gridViewContacts.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
+            this.gridViewContacts.MasterTemplate.AllowAddNewRow = false;
             this.gridViewContacts.MasterTemplate.AllowDeleteRow = false;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.HeaderText = "П/п";
-            gridViewTextBoxColumn1.Name = "colNum";
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.HeaderText = "Фамилия";
-            gridViewTextBoxColumn2.Name = "colSurname";
-            gridViewTextBoxColumn2.Width = 148;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.HeaderText = "Имя";
-            gridViewTextBoxColumn3.Name = "colName";
-            gridViewTextBoxColumn3.Width = 142;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.HeaderText = "Отчество";
-            gridViewTextBoxColumn4.Name = "colFathersName";
-            gridViewTextBoxColumn4.Width = 98;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.HeaderText = "Должность";
-            gridViewTextBoxColumn5.Name = "colRank";
-            gridViewTextBoxColumn5.Width = 177;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.HeaderText = "Телефон";
-            gridViewTextBoxColumn6.Name = "colPhoneNumber";
-            gridViewTextBoxColumn6.Width = 206;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.HeaderText = "column1";
-            gridViewTextBoxColumn7.Name = "column1";
-            gridViewTextBoxColumn7.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.HeaderText = "column2";
-            gridViewTextBoxColumn8.Name = "column2";
-            this.gridViewContacts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
+            this.gridViewContacts.MasterTemplate.AllowEditRow = false;
+            this.gridViewContacts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.gridViewContacts.MasterTemplate.EnableFiltering = true;
             sortDescriptor1.PropertyName = "column1";
             this.gridViewContacts.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor1});
@@ -336,7 +281,6 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.Controls.Add(this.radButton1);
             this.panelLogo.Controls.Add(this.pbLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.EnableTheming = false;
@@ -345,15 +289,6 @@
             this.panelLogo.Size = new System.Drawing.Size(1014, 104);
             this.panelLogo.TabIndex = 5;
             this.panelLogo.ThemeName = "ControlDefault";
-            // 
-            // radButton1
-            // 
-            this.radButton1.Location = new System.Drawing.Point(99, 27);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(110, 24);
-            this.radButton1.TabIndex = 5;
-            this.radButton1.Text = "radButton1";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // pbLogo
             // 
@@ -399,7 +334,6 @@
             this.pageViewMain.ResumeLayout(false);
             this.pageMail.ResumeLayout(false);
             this.pageMail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carouselPhotos)).EndInit();
             this.pageGallery.ResumeLayout(false);
@@ -412,7 +346,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewContacts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).EndInit();
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -443,7 +376,5 @@
         private Telerik.WinControls.Themes.HighContrastBlackTheme highContrastBlackTheme1;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
-        private Telerik.WinControls.UI.RadButton radButton1;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

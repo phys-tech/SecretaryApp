@@ -22,11 +22,11 @@ namespace SecretaryProgram
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
+            //ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
             //ThemeResolutionService.ApplicationThemeName = "Office2010Black";
-            //ThemeResolutionService.ApplicationThemeName = "HighContrastBlack";
+            ThemeResolutionService.ApplicationThemeName = "HighContrastBlack";
 
-            object[] row = { "1", "Иван", "Залупин", "Урюпинск", "Ведущий аналитик", "+79234234" };
+            /*object[] row = { "1", "Иван", "Залупин", "Урюпинск", "Ведущий аналитик", "+79234234" };
             gridViewContacts.Rows.Add(row);
             object[] row1 = { "2", "Петер", "Шмейхель", "Хайфа", "Ведущий аналитик", "+8653249345" };
             gridViewContacts.Rows.Add(row1);
@@ -43,8 +43,8 @@ namespace SecretaryProgram
             object[] row7 = { "8", "Adolf", "Schiklgruber", "Nurnberg", "Ведущий аналитик", "+545111232234" };
             gridViewContacts.Rows.Add(row7);
             gridViewContacts.Update();
-            gridViewContacts.Refresh();
-
+            gridViewContacts.Refresh();*/
+            FillContactsData();
             TutorialCreatingASlideViewerWithRadRotator_Load(sender, e);
         }
 
@@ -94,12 +94,11 @@ namespace SecretaryProgram
             rotatorPhotos.Previous();
         }
 
-        private void radButton1_Click(object sender, EventArgs e)
+        private void FillContactsData()
         {
             String name = "Sheet2";
             String constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
-                // f:\MyStuff\SecretaryProgram\SecretaryProgram\bin\Release\База сотрудников ПромНефть.xlsx
-                            "F:\\MyStuff\\SecretaryProgram\\SecretaryProgram\\bin\\Release\\WorkerksList.xlsx" +
+                            "WorkerksList.xlsx" +
                             ";Extended Properties='Excel 12.0 XML;HDR=YES;';";
 
             OleDbConnection con = new OleDbConnection(constr);
@@ -109,15 +108,11 @@ namespace SecretaryProgram
             OleDbDataAdapter sda = new OleDbDataAdapter(oconn);
             DataTable data = new DataTable();
             sda.Fill(data);
-            int rowscount = data.Rows.Count;
-            MessageBox.Show("" + rowscount.ToString(),"Info rows");
             gridViewContacts.DataSource = data;
             gridViewContacts.Update();
             gridViewContacts.Refresh();
-            dataGridView1.DataSource = data;
-            dataGridView1.Update();
-            
         }
+
     }
         public class Contact
         {
