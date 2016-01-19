@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Data.OleDb;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using Telerik.WinControls.UI.Localization;
 
 namespace SecretaryProgram
 {
@@ -23,8 +24,8 @@ namespace SecretaryProgram
         private void MainForm_Load(object sender, EventArgs e)
         {
             //ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
-            //ThemeResolutionService.ApplicationThemeName = "Office2010Black";
-            ThemeResolutionService.ApplicationThemeName = "HighContrastBlack";
+            ThemeResolutionService.ApplicationThemeName = "Office2010Black";
+            //ThemeResolutionService.ApplicationThemeName = "HighContrastBlack";
 
             /*object[] row = { "1", "Иван", "Залупин", "Урюпинск", "Ведущий аналитик", "+79234234" };
             gridViewContacts.Rows.Add(row);
@@ -46,6 +47,7 @@ namespace SecretaryProgram
             gridViewContacts.Refresh();*/
             FillContactsData();
             TutorialCreatingASlideViewerWithRadRotator_Load(sender, e);
+            SetUpLocalization();
         }
 
         private void TutorialCreatingASlideViewerWithRadRotator_Load(object sender, EventArgs e)
@@ -113,22 +115,12 @@ namespace SecretaryProgram
             gridViewContacts.Refresh();
         }
 
-    }
-        public class Contact
+        private void SetUpLocalization()
         {
-            public Contact(string _name, string _surname, string _address, string _phone, bool status)
-            {
-                Name = _name;
-                Surname = _surname;
-                Phone = _phone;
-                Address = _address;
-                Status = status;
-            }
-
-            public string Name;
-            public string Surname;
-            public string Phone;
-            public string Address;
-            public bool Status;
+            RadPageViewLocalizationProvider.CurrentProvider = new RussianPageViewLocalization();
+            RadGridLocalizationProvider.CurrentProvider = new RussianGridViewLocalization();            
         }
+
+    }
+
     }

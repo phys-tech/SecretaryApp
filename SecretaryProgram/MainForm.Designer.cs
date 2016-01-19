@@ -46,12 +46,12 @@
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.pageContacts = new Telerik.WinControls.UI.RadPageViewPage();
             this.gridViewContacts = new Telerik.WinControls.UI.RadGridView();
+            this.pageDocs = new Telerik.WinControls.UI.RadPageViewPage();
             this.panelLogo = new Telerik.WinControls.UI.RadPanel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.customShape1 = new Telerik.WinControls.OldShapeEditor.CustomShape();
             this.highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).BeginInit();
             this.pageViewMain.SuspendLayout();
@@ -69,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +77,7 @@
             this.pageViewMain.Controls.Add(this.pageMail);
             this.pageViewMain.Controls.Add(this.pageGallery);
             this.pageViewMain.Controls.Add(this.pageContacts);
+            this.pageViewMain.Controls.Add(this.pageDocs);
             this.pageViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageViewMain.Location = new System.Drawing.Point(0, 104);
             this.pageViewMain.Name = "pageViewMain";
@@ -249,6 +249,8 @@
             this.gridViewContacts.BackColor = System.Drawing.Color.White;
             this.gridViewContacts.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridViewContacts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridViewContacts.EnableCustomGrouping = true;
+            this.gridViewContacts.EnableCustomSorting = true;
             this.gridViewContacts.EnableTheming = false;
             this.gridViewContacts.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewContacts.ForeColor = System.Drawing.Color.Black;
@@ -262,6 +264,8 @@
             this.gridViewContacts.MasterTemplate.AllowDeleteRow = false;
             this.gridViewContacts.MasterTemplate.AllowEditRow = false;
             this.gridViewContacts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.gridViewContacts.MasterTemplate.EnableCustomGrouping = true;
+            this.gridViewContacts.MasterTemplate.EnableCustomSorting = true;
             this.gridViewContacts.MasterTemplate.EnableFiltering = true;
             sortDescriptor1.PropertyName = "column1";
             this.gridViewContacts.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
@@ -278,6 +282,14 @@
             this.gridViewContacts.Size = new System.Drawing.Size(993, 536);
             this.gridViewContacts.TabIndex = 0;
             this.gridViewContacts.ThemeName = "HighContrastBlack";
+            // 
+            // pageDocs
+            // 
+// TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
+            this.pageDocs.Location = new System.Drawing.Point(10, 37);
+            this.pageDocs.Name = "pageDocs";
+            this.pageDocs.Size = new System.Drawing.Size(993, 536);
+            this.pageDocs.Text = "Документы";
             // 
             // panelLogo
             // 
@@ -306,10 +318,6 @@
             // customShape1
             // 
             this.customShape1.Dimension = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // contactBindingSource
-            // 
-            this.contactBindingSource.DataSource = typeof(SecretaryProgram.Contact);
             // 
             // MainForm
             // 
@@ -347,7 +355,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -362,7 +369,6 @@
         private Telerik.WinControls.UI.RadPanel panelLogo;
         private System.Windows.Forms.PictureBox pbLogo;
         private Telerik.WinControls.UI.RadGridView gridViewContacts;
-        private System.Windows.Forms.BindingSource contactBindingSource;
         private Telerik.WinControls.OldShapeEditor.CustomShape customShape1;
         private System.Windows.Forms.ImageList imageList;
         private Telerik.WinControls.UI.RadCarousel carouselPhotos;
@@ -376,5 +382,6 @@
         private Telerik.WinControls.Themes.HighContrastBlackTheme highContrastBlackTheme1;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
+        private Telerik.WinControls.UI.RadPageViewPage pageDocs;
     }
 }
