@@ -29,16 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.CarouselEllipsePath carouselEllipsePath1 = new Telerik.WinControls.UI.CarouselEllipsePath();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode1 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode2 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode3 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode4 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode5 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode6 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode7 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode8 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode9 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode10 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode11 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode12 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode13 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode14 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode15 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode16 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode17 = new Telerik.WinControls.UI.RadTreeNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.pageViewMain = new Telerik.WinControls.UI.RadPageView();
             this.pageMail = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.carouselPhotos = new Telerik.WinControls.UI.RadCarousel();
-            this.radImageButtonElement1 = new Telerik.WinControls.UI.RadImageButtonElement();
-            this.radImageItem1 = new Telerik.WinControls.UI.RadImageItem();
-            this.radImageItem2 = new Telerik.WinControls.UI.RadImageItem();
+            this.tvMailbox = new Telerik.WinControls.UI.RadTreeView();
             this.pageGallery = new Telerik.WinControls.UI.RadPageViewPage();
             this.rotatorPhotos = new Telerik.WinControls.UI.RadRotator();
             this.bPrevButton = new Telerik.WinControls.UI.RadButton();
@@ -49,15 +61,14 @@
             this.pageDocs = new Telerik.WinControls.UI.RadPageViewPage();
             this.panelLogo = new Telerik.WinControls.UI.RadPanel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.customShape1 = new Telerik.WinControls.OldShapeEditor.CustomShape();
             this.highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
+            this.rtbMailContent = new Telerik.WinControls.RichTextBox.RadRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).BeginInit();
             this.pageViewMain.SuspendLayout();
             this.pageMail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carouselPhotos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tvMailbox)).BeginInit();
             this.pageGallery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotatorPhotos)).BeginInit();
             this.rotatorPhotos.SuspendLayout();
@@ -69,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtbMailContent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +93,7 @@
             this.pageViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageViewMain.Location = new System.Drawing.Point(0, 104);
             this.pageViewMain.Name = "pageViewMain";
-            this.pageViewMain.SelectedPage = this.pageContacts;
+            this.pageViewMain.SelectedPage = this.pageMail;
             this.pageViewMain.Size = new System.Drawing.Size(1014, 584);
             this.pageViewMain.TabIndex = 2;
             this.pageViewMain.Text = "PageView Main";
@@ -94,91 +106,93 @@
             // pageMail
             // 
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
-            this.pageMail.Controls.Add(this.radLabel1);
-            this.pageMail.Controls.Add(this.carouselPhotos);
+            this.pageMail.Controls.Add(this.rtbMailContent);
+            this.pageMail.Controls.Add(this.tvMailbox);
             this.pageMail.Location = new System.Drawing.Point(10, 37);
             this.pageMail.Name = "pageMail";
             this.pageMail.Size = new System.Drawing.Size(993, 536);
             this.pageMail.Text = "Почта";
             // 
-            // radLabel1
+            // tvMailbox
             // 
-            this.radLabel1.EnableTheming = false;
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel1.Location = new System.Drawing.Point(346, 233);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(328, 25);
-            this.radLabel1.TabIndex = 3;
-            this.radLabel1.Text = "Здесь будет почта компании ПромНефть! ";
-            // 
-            // carouselPhotos
-            // 
-            this.carouselPhotos.ButtonPositions = Telerik.WinControls.UI.NavigationButtonsPosition.Top;
-            carouselEllipsePath1.Center = new Telerik.WinControls.UI.Point3D(50.837138508371382D, 45.892351274787536D, 0D);
-            carouselEllipsePath1.FinalAngle = -45D;
-            carouselEllipsePath1.InitialAngle = 90D;
-            carouselEllipsePath1.U = new Telerik.WinControls.UI.Point3D(-20D, -17D, -50D);
-            carouselEllipsePath1.V = new Telerik.WinControls.UI.Point3D(30D, -25D, -60D);
-            carouselEllipsePath1.ZScale = 500D;
-            this.carouselPhotos.CarouselPath = carouselEllipsePath1;
-            this.carouselPhotos.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radImageButtonElement1,
-            this.radImageItem1,
-            this.radImageItem2});
-            this.carouselPhotos.Location = new System.Drawing.Point(34, 16);
-            this.carouselPhotos.Name = "carouselPhotos";
-            this.carouselPhotos.Size = new System.Drawing.Size(524, 174);
-            this.carouselPhotos.TabIndex = 2;
-            this.carouselPhotos.Text = "Whre is the text";
-            this.carouselPhotos.Visible = false;
-            // 
-            // radImageButtonElement1
-            // 
-            this.radImageButtonElement1.AccessibleDescription = "radImageButtonElement1";
-            this.radImageButtonElement1.AccessibleName = "radImageButtonElement1";
-            this.radImageButtonElement1.AutoSize = true;
-            this.radImageButtonElement1.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
-            this.radImageButtonElement1.FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent;
-            this.radImageButtonElement1.Image = ((System.Drawing.Image)(resources.GetObject("radImageButtonElement1.Image")));
-            this.radImageButtonElement1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radImageButtonElement1.ImageIndexClicked = 0;
-            this.radImageButtonElement1.ImageIndexHovered = 0;
-            this.radImageButtonElement1.MaxSize = new System.Drawing.Size(200, 200);
-            this.radImageButtonElement1.Name = "radImageButtonElement1";
-            this.radImageButtonElement1.SerializeChildren = false;
-            this.radImageButtonElement1.ShouldPaint = true;
-            this.radImageButtonElement1.StretchHorizontally = true;
-            this.radImageButtonElement1.StretchVertically = true;
-            this.radImageButtonElement1.Text = "radImageButtonElement1";
-            this.radImageButtonElement1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radImageItem1
-            // 
-            this.radImageItem1.AccessibleDescription = "radImageItem1";
-            this.radImageItem1.AccessibleName = "radImageItem1";
-            this.radImageItem1.AutoSize = true;
-            this.radImageItem1.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
-            this.radImageItem1.ClipDrawing = true;
-            this.radImageItem1.FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent;
-            this.radImageItem1.Image = ((System.Drawing.Image)(resources.GetObject("radImageItem1.Image")));
-            this.radImageItem1.MaxSize = new System.Drawing.Size(200, 200);
-            this.radImageItem1.Name = "radImageItem1";
-            this.radImageItem1.Text = "radImageItem1";
-            this.radImageItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radImageItem2
-            // 
-            this.radImageItem2.AccessibleDescription = "radImageItem2";
-            this.radImageItem2.AccessibleName = "radImageItem2";
-            this.radImageItem2.ClipDrawing = true;
-            this.radImageItem2.Image = ((System.Drawing.Image)(resources.GetObject("radImageItem2.Image")));
-            this.radImageItem2.MaxSize = new System.Drawing.Size(200, 200);
-            this.radImageItem2.Name = "radImageItem2";
-            this.radImageItem2.ShouldPaint = true;
-            this.radImageItem2.StretchHorizontally = false;
-            this.radImageItem2.StretchVertically = false;
-            this.radImageItem2.Text = "radImageItem2";
-            this.radImageItem2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.tvMailbox.AllowArbitraryItemHeight = true;
+            this.tvMailbox.AllowDragDrop = true;
+            this.tvMailbox.AllowDrop = true;
+            this.tvMailbox.AllowShowFocusCues = true;
+            this.tvMailbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(249)))));
+            this.tvMailbox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tvMailbox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tvMailbox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tvMailbox.ForeColor = System.Drawing.Color.Black;
+            this.tvMailbox.Location = new System.Drawing.Point(0, 0);
+            this.tvMailbox.Name = "tvMailbox";
+            radTreeNode1.Expanded = true;
+            radTreeNode1.Name = "Inbox";
+            radTreeNode2.Name = "Node6";
+            radTreeNode2.Text = "Иван Петров, 6.06.2013";
+            radTreeNode3.Name = "Node7";
+            radTreeNode3.Text = "Серж Весёлкин, 07.07.2014";
+            radTreeNode4.Name = "Node8";
+            radTreeNode4.Text = "Брэд Питт, 01.02.2012";
+            radTreeNode5.Name = "Node9";
+            radTreeNode5.Text = "Тамара Захаровна, 28.12.2014";
+            radTreeNode6.Name = "Node14";
+            radTreeNode6.Text = "Alex Norden, 12.11.2001";
+            radTreeNode1.Nodes.AddRange(new Telerik.WinControls.UI.RadTreeNode[] {
+            radTreeNode2,
+            radTreeNode3,
+            radTreeNode4,
+            radTreeNode5,
+            radTreeNode6});
+            radTreeNode1.Text = "Входящие";
+            radTreeNode7.Expanded = true;
+            radTreeNode7.Name = "Sent";
+            radTreeNode8.Name = "Node10";
+            radTreeNode8.Text = "Иван Петров";
+            radTreeNode9.Name = "Node11";
+            radTreeNode9.Text = "Тамара Захаровна";
+            radTreeNode10.Name = "Node12";
+            radTreeNode10.Text = "Тамара Захаровна";
+            radTreeNode11.Name = "Node13";
+            radTreeNode11.Text = "Alex Norden";
+            radTreeNode7.Nodes.AddRange(new Telerik.WinControls.UI.RadTreeNode[] {
+            radTreeNode8,
+            radTreeNode9,
+            radTreeNode10,
+            radTreeNode11});
+            radTreeNode7.Text = "Отправленные";
+            radTreeNode12.Name = "Drafts";
+            radTreeNode12.Text = "Черновики";
+            radTreeNode13.Expanded = true;
+            radTreeNode13.Name = "Spam";
+            radTreeNode14.Expanded = true;
+            radTreeNode14.Name = "Node15";
+            radTreeNode14.Text = "Заработайте 600 баксов в час!";
+            radTreeNode15.Name = "Node16";
+            radTreeNode15.Text = "Очки Ray Ban по 100 руб.";
+            radTreeNode16.Name = "Node17";
+            radTreeNode16.Text = "Увеличение пенисов анонимно";
+            radTreeNode13.Nodes.AddRange(new Telerik.WinControls.UI.RadTreeNode[] {
+            radTreeNode14,
+            radTreeNode15,
+            radTreeNode16});
+            radTreeNode13.Text = "Спам";
+            radTreeNode17.Name = "Deleted";
+            radTreeNode17.Text = "Удаленные";
+            this.tvMailbox.Nodes.AddRange(new Telerik.WinControls.UI.RadTreeNode[] {
+            radTreeNode1,
+            radTreeNode7,
+            radTreeNode12,
+            radTreeNode13,
+            radTreeNode17});
+            this.tvMailbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tvMailbox.ShowLines = true;
+            this.tvMailbox.Size = new System.Drawing.Size(497, 536);
+            this.tvMailbox.SpacingBetweenNodes = -1;
+            this.tvMailbox.TabIndex = 0;
+            this.tvMailbox.Text = "TreeViewMail";
+            this.tvMailbox.TriStateMode = true;
+            this.tvMailbox.SelectedNodeChanged += new Telerik.WinControls.UI.RadTreeView.RadTreeViewEventHandler(this.tvMailbox_SelectedNodeChanged);
             // 
             // pageGallery
             // 
@@ -257,7 +271,7 @@
             this.gridViewContacts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gridViewContacts.Location = new System.Drawing.Point(0, 0);
             // 
-            // gridViewContacts
+            // 
             // 
             this.gridViewContacts.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewContacts.MasterTemplate.AllowAddNewRow = false;
@@ -315,9 +329,14 @@
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
             // 
-            // customShape1
+            // rtbMailContent
             // 
-            this.customShape1.Dimension = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.rtbMailContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbMailContent.HyperlinkToolTipFormatString = null;
+            this.rtbMailContent.Location = new System.Drawing.Point(497, 0);
+            this.rtbMailContent.Name = "rtbMailContent";
+            this.rtbMailContent.Size = new System.Drawing.Size(496, 536);
+            this.rtbMailContent.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -341,9 +360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).EndInit();
             this.pageViewMain.ResumeLayout(false);
             this.pageMail.ResumeLayout(false);
-            this.pageMail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carouselPhotos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tvMailbox)).EndInit();
             this.pageGallery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rotatorPhotos)).EndInit();
             this.rotatorPhotos.ResumeLayout(false);
@@ -355,6 +372,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtbMailContent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -363,25 +381,21 @@
         #endregion
 
         private Telerik.WinControls.UI.RadPageView pageViewMain;
-        private Telerik.WinControls.UI.RadPageViewPage pageMail;
         private Telerik.WinControls.UI.RadPageViewPage pageGallery;
         private Telerik.WinControls.UI.RadPageViewPage pageContacts;
         private Telerik.WinControls.UI.RadPanel panelLogo;
         private System.Windows.Forms.PictureBox pbLogo;
         private Telerik.WinControls.UI.RadGridView gridViewContacts;
-        private Telerik.WinControls.OldShapeEditor.CustomShape customShape1;
         private System.Windows.Forms.ImageList imageList;
-        private Telerik.WinControls.UI.RadCarousel carouselPhotos;
-        private Telerik.WinControls.UI.RadImageButtonElement radImageButtonElement1;
-        private Telerik.WinControls.UI.RadImageItem radImageItem1;
-        private Telerik.WinControls.UI.RadImageItem radImageItem2;
         private Telerik.WinControls.UI.RadRotator rotatorPhotos;
         private Telerik.WinControls.UI.RadButton bPrevButton;
         private Telerik.WinControls.UI.RadButton bNextButton;
-        private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.Themes.HighContrastBlackTheme highContrastBlackTheme1;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
         private Telerik.WinControls.UI.RadPageViewPage pageDocs;
+        private Telerik.WinControls.UI.RadPageViewPage pageMail;
+        private Telerik.WinControls.UI.RadTreeView tvMailbox;
+        private Telerik.WinControls.RichTextBox.RadRichTextBox rtbMailContent;
     }
 }

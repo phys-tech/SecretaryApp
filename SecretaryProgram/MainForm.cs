@@ -118,7 +118,17 @@ namespace SecretaryProgram
         private void SetUpLocalization()
         {
             RadPageViewLocalizationProvider.CurrentProvider = new RussianPageViewLocalization();
-            RadGridLocalizationProvider.CurrentProvider = new RussianGridViewLocalization();            
+            RadGridLocalizationProvider.CurrentProvider = new RussianGridViewLocalization();
+        }
+
+        private void tvMailbox_SelectedNodeChanged(object sender, RadTreeViewEventArgs e)
+        {
+            if (e.TreeView.HasChildren)
+                return;
+                
+            Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition style = new Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition();
+            rtbMailContent.Document.Insert("WTF is oging on", style);
+            //MessageBox.Show("WTF here");
         }
 
     }
