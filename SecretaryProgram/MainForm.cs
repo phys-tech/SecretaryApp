@@ -11,16 +11,21 @@ using System.Data.OleDb;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Localization;
+using Telerik.WinControls.RichTextBox;
+
 
 namespace SecretaryProgram
 {
     public partial class MainForm : Telerik.WinControls.UI.RadForm
     {
+        DataTable dtMailData = new DataTable();
+        MailFolder InboxMail = new MailFolder();
+
         public MainForm()
         {
             InitializeComponent();
         }
-
+        
         private void MainForm_Load(object sender, EventArgs e)
         {
             //ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
@@ -46,8 +51,10 @@ namespace SecretaryProgram
             gridViewContacts.Update();
             gridViewContacts.Refresh();*/
             FillContactsData();
+            FillMailData();
             TutorialCreatingASlideViewerWithRadRotator_Load(sender, e);
             SetUpLocalization();
+            AddTextToDocs();
         }
 
         private void TutorialCreatingASlideViewerWithRadRotator_Load(object sender, EventArgs e)
@@ -115,6 +122,27 @@ namespace SecretaryProgram
             gridViewContacts.Refresh();
         }
 
+        private void FillMailData()
+        {
+            String name = "Входящие";
+            String constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
+                            "MailList.xlsx" +
+                            ";Extended Properties='Excel 12.0 XML;HDR=YES;';";
+            
+            OleDbConnection con = new OleDbConnection(constr);
+            OleDbCommand oconn = new OleDbCommand("Select * From [" + name + "$]", con);
+            con.Open();
+
+            OleDbDataAdapter sda = new OleDbDataAdapter(oconn);
+
+            sda.Fill(dtMailData);
+            foreach (DataRow row in dtMailData.Rows)
+            {
+                //MessageBox.Show(row[1].ToString(), "MyData");
+                InboxMail.LetterList.Add(new Letter(row[0].ToString(), (DateTime) row[1], row[2].ToString(), row[3].ToString()));
+            }
+        }
+        
         private void SetUpLocalization()
         {
             RadPageViewLocalizationProvider.CurrentProvider = new RussianPageViewLocalization();
@@ -125,10 +153,40 @@ namespace SecretaryProgram
         {
             if (e.TreeView.HasChildren)
                 return;
-                
+
             Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition style = new Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition();
-            rtbMailContent.Document.Insert("WTF is oging on", style);
-            //MessageBox.Show("WTF here");
+
+            //MessageBox.Show(e.Node.Text.ToString(), "Selected TEXT");     // text of the selected node
+            //string par = e.Node.Parent.Text.ToString(); // text of the parent
+            string level = e.Node.Level.ToString();     // level of the node, like root = 0 (inbox-outbox), real letters - 1 and so on
+            if (e.Node.Level == 1)
+            {
+                int index = e.Node.Index;       // index of the letter, like fifth in the parent node
+                ClearMailContentsBox();
+                tbSender.Text = InboxMail.LetterList[index].Sender;
+                tbTheme.Text = InboxMail.LetterList[index].Theme;
+                tbDate.Text = InboxMail.LetterList[index].Date.ToShortDateString();
+                rtbMailContent.Document.Insert(InboxMail.LetterList[index].Text, style);
+            }
+        }
+
+        private void ClearMailContentsBox()
+        {
+            DocumentPosition start = rtbMailContent.Document.CaretPosition;
+            start.MoveToFirstPositionInDocument();
+            DocumentPosition end = new DocumentPosition(start);
+            end.MoveToLastPositionInDocument();
+            rtbMailContent.Document.DeleteRange(start, end);
+        }
+
+        private void AddTextToDocs()
+        {
+            Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition style = new Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition();
+            String docText = "Инструкции. \r\nЗдесь будут располагаться интрукции, описывающие, как составляется табельный номер,  ";
+            docText += "\r\nгде искать нужную информацию и вообще любые вещи, которые нам понадобятся.";
+            rtbDocs.Document.Insert(docText , style);
+            //rtbDocs.Document.InsertLineBreak();
+            //rtbDocs.Document.Insert(docText, style);
         }
 
     }
