@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data;
+using System.Drawing;
 using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Collections.Generic;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Localization;
@@ -18,8 +18,7 @@ namespace SecretaryProgram
 {
     public partial class MainForm : Telerik.WinControls.UI.RadForm
     {
-        DataTable dtMailData = new DataTable();
-        MailFolder InboxMail = new MailFolder();
+        MailBox Mail = new MailBox();
 
         public MainForm()
         {
@@ -32,24 +31,6 @@ namespace SecretaryProgram
             ThemeResolutionService.ApplicationThemeName = "Office2010Black";
             //ThemeResolutionService.ApplicationThemeName = "HighContrastBlack";
 
-            /*object[] row = { "1", "Иван", "Залупин", "Урюпинск", "Ведущий аналитик", "+79234234" };
-            gridViewContacts.Rows.Add(row);
-            object[] row1 = { "2", "Петер", "Шмейхель", "Хайфа", "Ведущий аналитик", "+8653249345" };
-            gridViewContacts.Rows.Add(row1);
-            object[] row2 = { "3", "Джек", "Шеппард", "Лос-Анджелес", "Ведущий аналитик", "+1986755635" };
-            gridViewContacts.Rows.Add(row2);
-            object[] row3 = { "4", "Анна", "Шаповалова", "Москва", "Ведущий аналитик", "+7942342422" };
-            gridViewContacts.Rows.Add(row3);
-            object[] row4 = { "5", "Мустафа", "Ибрагим иба Ашаб Кхан", "Дели", "Ведущий аналитик", "+7942342422" };
-            gridViewContacts.Rows.Add(row4);
-            object[] row5 = { "6", "John", "Smith", "Winchester", "Ведущий аналитик", "+443459342422" };
-            gridViewContacts.Rows.Add(row5);
-            object[] row6 = { "7", "Nicolas", "Sarcozy", "Paris", "Ведущий аналитик", "+2345366452" };
-            gridViewContacts.Rows.Add(row6);
-            object[] row7 = { "8", "Adolf", "Schiklgruber", "Nurnberg", "Ведущий аналитик", "+545111232234" };
-            gridViewContacts.Rows.Add(row7);
-            gridViewContacts.Update();
-            gridViewContacts.Refresh();*/
             FillContactsData();
             FillMailData();
             TutorialCreatingASlideViewerWithRadRotator_Load(sender, e);
@@ -107,7 +88,7 @@ namespace SecretaryProgram
         {
             String name = "Sheet2";
             String constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
-                            "WorkerksList.xlsx" +
+                            "WorkersList.xlsx" +
                             ";Extended Properties='Excel 12.0 XML;HDR=YES;';";
 
             OleDbConnection con = new OleDbConnection(constr);
@@ -124,22 +105,12 @@ namespace SecretaryProgram
 
         private void FillMailData()
         {
-            String name = "Входящие";
-            String constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
-                            "MailList.xlsx" +
-                            ";Extended Properties='Excel 12.0 XML;HDR=YES;';";
-            
-            OleDbConnection con = new OleDbConnection(constr);
-            OleDbCommand oconn = new OleDbCommand("Select * From [" + name + "$]", con);
-            con.Open();
-
-            OleDbDataAdapter sda = new OleDbDataAdapter(oconn);
-
-            sda.Fill(dtMailData);
-            foreach (DataRow row in dtMailData.Rows)
+            List<string> FolderNames = new List<string> { "Входящие", "Исходящие", "Черновики", "Спам", "Корзина" };
+            foreach (string folder in FolderNames)
             {
-                //MessageBox.Show(row[1].ToString(), "MyData");
-                InboxMail.LetterList.Add(new Letter(row[0].ToString(), (DateTime) row[1], row[2].ToString(), row[3].ToString()));
+                Mail.AddFolderToMailBox(folder);
+                foreach (Letter letter in Mail.Folders[folder].LetterList.ToArray())
+                    tvMailbox.Nodes[folder].Nodes.Add(letter.NameAndDate());                
             }
         }
         
@@ -151,22 +122,22 @@ namespace SecretaryProgram
 
         private void tvMailbox_SelectedNodeChanged(object sender, RadTreeViewEventArgs e)
         {
+            //MessageBox.Show(e.Node.Text.ToString(), "Selected TEXT");     // text of the selected node
+            //string level = e.Node.Level.ToString();     // level of the node, like root = 0 (inbox-outbox), real letters - 1 and so on
             if (e.TreeView.HasChildren)
                 return;
 
-            Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition style = new Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition();
+            Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition style = new Telerik.WinControls.RichTextBox.Model.Styles.StyleDefinition();            
 
-            //MessageBox.Show(e.Node.Text.ToString(), "Selected TEXT");     // text of the selected node
-            //string par = e.Node.Parent.Text.ToString(); // text of the parent
-            string level = e.Node.Level.ToString();     // level of the node, like root = 0 (inbox-outbox), real letters - 1 and so on
             if (e.Node.Level == 1)
             {
+                string folder = e.Node.Parent.Text.ToString(); // text of the parent
                 int index = e.Node.Index;       // index of the letter, like fifth in the parent node
                 ClearMailContentsBox();
-                tbSender.Text = InboxMail.LetterList[index].Sender;
-                tbTheme.Text = InboxMail.LetterList[index].Theme;
-                tbDate.Text = InboxMail.LetterList[index].Date.ToShortDateString();
-                rtbMailContent.Document.Insert(InboxMail.LetterList[index].Text, style);
+                tbSender.Text = Mail.Folders[folder].LetterList[index].Sender;
+                tbTheme.Text = Mail.Folders[folder].LetterList[index].Theme;
+                tbDate.Text = Mail.Folders[folder].LetterList[index].Date.ToLongDateString();
+                rtbMailContent.Document.Insert(Mail.Folders[folder].LetterList[index].Text, style);
             }
         }
 
