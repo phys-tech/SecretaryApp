@@ -12,7 +12,8 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Localization;
 using Telerik.WinControls.RichTextBox;
-
+using System.Globalization;
+using System.Threading;
 
 namespace SecretaryProgram
 {
@@ -31,14 +32,15 @@ namespace SecretaryProgram
             ThemeResolutionService.ApplicationThemeName = "Office2010Black";
             //ThemeResolutionService.ApplicationThemeName = "HighContrastBlack";
 
+            SetUpLocalization();
             FillContactsData();
             FillMailData();
-            TutorialCreatingASlideViewerWithRadRotator_Load(sender, e);
-            SetUpLocalization();
+            CreateSlideViewerRotator_Load(sender, e);
+
             AddTextToDocs();
         }
 
-        private void TutorialCreatingASlideViewerWithRadRotator_Load(object sender, EventArgs e)
+        private void CreateSlideViewerRotator_Load(object sender, EventArgs e)
         {
             string myPicturesPath = ".";
             foreach (string fileName in Directory.GetFiles(myPicturesPath, "*.jpg"))
@@ -87,20 +89,30 @@ namespace SecretaryProgram
         private void FillContactsData()
         {
             String name = "Sheet2";
-            String constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
+            String ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
                             "WorkersList.xlsx" +
                             ";Extended Properties='Excel 12.0 XML;HDR=YES;';";
 
-            OleDbConnection con = new OleDbConnection(constr);
-            OleDbCommand oconn = new OleDbCommand("Select * From [" + name + "$]", con);
-            con.Open();
+            OleDbConnection Connection = new OleDbConnection(ConnectionString);
+            OleDbCommand DbCommand = new OleDbCommand("Select * From [" + name + "$]", Connection);
+            Connection.Open();
 
-            OleDbDataAdapter sda = new OleDbDataAdapter(oconn);
+            OleDbDataAdapter OleDataAdapter = new OleDbDataAdapter(DbCommand);
             DataTable data = new DataTable();
-            sda.Fill(data);
+            OleDataAdapter.Fill(data);
+            //data.Columns["Дата рождения"].Cells
+
+            CultureInfo standardizedCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            standardizedCulture.DateTimeFormat.DateSeparator = ".";
+            standardizedCulture.DateTimeFormat.LongDatePattern = "dd MMMM yyyy";
+            standardizedCulture.DateTimeFormat.FullDateTimePattern = "dd.MM.yyyy";
+            standardizedCulture.DateTimeFormat.ShortDatePattern = "dd.MM.yyyy";
+            standardizedCulture.DateTimeFormat.LongTimePattern = "";
+            Thread.CurrentThread.CurrentCulture = standardizedCulture;
+            Thread.CurrentThread.CurrentUICulture = standardizedCulture;
+            //data.Locale = standardizedCulture;
+
             gridViewContacts.DataSource = data;
-            gridViewContacts.Update();
-            gridViewContacts.Refresh();
         }
 
         private void FillMailData()
