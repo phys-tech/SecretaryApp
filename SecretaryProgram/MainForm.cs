@@ -15,7 +15,7 @@ using Telerik.WinControls.RichTextBox;
 using System.Globalization;
 using System.Threading;
 
-namespace SecretaryProgram
+namespace SecretaryApp
 {
     public partial class MainForm : Telerik.WinControls.UI.RadForm
     {

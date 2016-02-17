@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace SecretaryProgram
+namespace SecretaryApp
 {
     static class Program
     {
@@ -15,7 +15,8 @@ namespace SecretaryProgram
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            //Application.Run(new MainForm());
+            Application.Run(new LoginForm());
         }
     }
 }

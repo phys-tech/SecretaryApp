@@ -6,7 +6,7 @@ using System.Data.OleDb;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace SecretaryProgram
+namespace SecretaryApp
 {
     public class Letter
     {

@@ -2,7 +2,7 @@
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Localization;
 
-namespace SecretaryProgram
+namespace SecretaryApp
 {
 
     public class RussianPageViewLocalization : RadPageViewLocalizationProvider

@@ -1,4 +1,4 @@
-﻿namespace SecretaryProgram
+﻿namespace SecretaryApp
 {
     partial class MainForm
     {
