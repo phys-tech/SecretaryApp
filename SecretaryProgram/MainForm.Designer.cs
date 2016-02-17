@@ -35,7 +35,7 @@
             Telerik.WinControls.UI.RadTreeNode radTreeNode4 = new Telerik.WinControls.UI.RadTreeNode();
             Telerik.WinControls.UI.RadTreeNode radTreeNode5 = new Telerik.WinControls.UI.RadTreeNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor5 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.pageViewMain = new Telerik.WinControls.UI.RadPageView();
             this.pageMail = new Telerik.WinControls.UI.RadPageViewPage();
             this.rtbMailContent = new Telerik.WinControls.RichTextBox.RadRichTextBox();
@@ -50,6 +50,9 @@
             this.pageGallery = new Telerik.WinControls.UI.RadPageViewPage();
             this.rotatorPhotos = new Telerik.WinControls.UI.RadRotator();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.panelPhotos = new Telerik.WinControls.UI.RadPanel();
+            this.bPrevButton = new Telerik.WinControls.UI.RadButton();
+            this.bNextButton = new Telerik.WinControls.UI.RadButton();
             this.pageContacts = new Telerik.WinControls.UI.RadPageViewPage();
             this.gridViewContacts = new Telerik.WinControls.UI.RadGridView();
             this.panelOfficialTitle = new Telerik.WinControls.UI.RadPanel();
@@ -61,9 +64,6 @@
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.panelPhotos = new Telerik.WinControls.UI.RadPanel();
-            this.bPrevButton = new Telerik.WinControls.UI.RadButton();
-            this.bNextButton = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).BeginInit();
             this.pageViewMain.SuspendLayout();
             this.pageMail.SuspendLayout();
@@ -79,6 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tvMailbox)).BeginInit();
             this.pageGallery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotatorPhotos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelPhotos)).BeginInit();
+            this.panelPhotos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bPrevButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bNextButton)).BeginInit();
             this.pageContacts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewContacts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewContacts.MasterTemplate)).BeginInit();
@@ -88,10 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelPhotos)).BeginInit();
-            this.panelPhotos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bPrevButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bNextButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,6 +277,41 @@
             this.imageList.Images.SetKeyName(1, "Cat5.jpg");
             this.imageList.Images.SetKeyName(2, "Cat6.jpg");
             // 
+            // panelPhotos
+            // 
+            this.panelPhotos.Controls.Add(this.bPrevButton);
+            this.panelPhotos.Controls.Add(this.bNextButton);
+            this.panelPhotos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelPhotos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panelPhotos.Location = new System.Drawing.Point(0, 0);
+            this.panelPhotos.Name = "panelPhotos";
+            this.panelPhotos.Size = new System.Drawing.Size(1001, 42);
+            this.panelPhotos.TabIndex = 3;
+            this.panelPhotos.Text = "Фотографии офисов ЗАО \"ПромНефть Россия\"";
+            this.panelPhotos.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bPrevButton
+            // 
+            this.bPrevButton.EnableTheming = false;
+            this.bPrevButton.Location = new System.Drawing.Point(12, 7);
+            this.bPrevButton.Name = "bPrevButton";
+            this.bPrevButton.Size = new System.Drawing.Size(77, 24);
+            this.bPrevButton.TabIndex = 8;
+            this.bPrevButton.Text = "Назад";
+            this.bPrevButton.ThemeName = "HighContrastBlack";
+            this.bPrevButton.Click += new System.EventHandler(this.bPrevPhoto_Click);
+            // 
+            // bNextButton
+            // 
+            this.bNextButton.EnableTheming = false;
+            this.bNextButton.Location = new System.Drawing.Point(95, 7);
+            this.bNextButton.Name = "bNextButton";
+            this.bNextButton.Size = new System.Drawing.Size(77, 24);
+            this.bNextButton.TabIndex = 7;
+            this.bNextButton.Text = "Вперед";
+            this.bNextButton.ThemeName = "HighContrastBlack";
+            this.bNextButton.Click += new System.EventHandler(this.bNextPhoto_Click);
+            // 
             // pageContacts
             // 
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
@@ -299,7 +334,7 @@
             this.gridViewContacts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gridViewContacts.Location = new System.Drawing.Point(0, 42);
             // 
-            // gridViewContacts
+            // 
             // 
             this.gridViewContacts.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewContacts.MasterTemplate.AllowAddNewRow = false;
@@ -310,9 +345,9 @@
             this.gridViewContacts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.gridViewContacts.MasterTemplate.EnableFiltering = true;
             this.gridViewContacts.MasterTemplate.EnableGrouping = false;
-            sortDescriptor5.PropertyName = "column1";
+            sortDescriptor1.PropertyName = "column1";
             this.gridViewContacts.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor5});
+            sortDescriptor1});
             this.gridViewContacts.Name = "gridViewContacts";
             this.gridViewContacts.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
@@ -381,41 +416,6 @@
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
             // 
-            // panelPhotos
-            // 
-            this.panelPhotos.Controls.Add(this.bPrevButton);
-            this.panelPhotos.Controls.Add(this.bNextButton);
-            this.panelPhotos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPhotos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panelPhotos.Location = new System.Drawing.Point(0, 0);
-            this.panelPhotos.Name = "panelPhotos";
-            this.panelPhotos.Size = new System.Drawing.Size(1001, 42);
-            this.panelPhotos.TabIndex = 3;
-            this.panelPhotos.Text = "Фотографии офисов ЗАО \"ПромНефть Россия\"";
-            this.panelPhotos.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bPrevButton
-            // 
-            this.bPrevButton.EnableTheming = false;
-            this.bPrevButton.Location = new System.Drawing.Point(12, 7);
-            this.bPrevButton.Name = "bPrevButton";
-            this.bPrevButton.Size = new System.Drawing.Size(77, 24);
-            this.bPrevButton.TabIndex = 8;
-            this.bPrevButton.Text = "Назад";
-            this.bPrevButton.ThemeName = "HighContrastBlack";
-            this.bPrevButton.Click += new System.EventHandler(this.bPrevPhoto_Click);
-            // 
-            // bNextButton
-            // 
-            this.bNextButton.EnableTheming = false;
-            this.bNextButton.Location = new System.Drawing.Point(95, 7);
-            this.bNextButton.Name = "bNextButton";
-            this.bNextButton.Size = new System.Drawing.Size(77, 24);
-            this.bNextButton.TabIndex = 7;
-            this.bNextButton.Text = "Вперед";
-            this.bNextButton.ThemeName = "HighContrastBlack";
-            this.bNextButton.Click += new System.EventHandler(this.bNextPhoto_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +434,7 @@
             this.ThemeName = "HighContrastBlack";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).EndInit();
             this.pageViewMain.ResumeLayout(false);
@@ -451,6 +452,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tvMailbox)).EndInit();
             this.pageGallery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rotatorPhotos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelPhotos)).EndInit();
+            this.panelPhotos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bPrevButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bNextButton)).EndInit();
             this.pageContacts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewContacts.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewContacts)).EndInit();
@@ -460,10 +465,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelPhotos)).EndInit();
-            this.panelPhotos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bPrevButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bNextButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

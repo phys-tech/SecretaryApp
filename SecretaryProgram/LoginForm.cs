@@ -5,22 +5,24 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 using Telerik.WinControls;
 
 namespace SecretaryApp
 {
     public partial class LoginForm : Telerik.WinControls.UI.RadForm
     {
-        struct LoginPass
+        public struct LoginPass
         {
             public string Login;
             public string Pass1;
             public string Pass2;
+            public string MainFormCaption;
         }
 
-        LoginPass Secretary;
-        LoginPass Director;
-        LoginPass CurrentMode;
+        private LoginPass Secretary;
+        private LoginPass Director;
+        public LoginPass CurrentMode;
 
         public LoginForm()
         {
@@ -32,22 +34,19 @@ namespace SecretaryApp
             Secretary.Login = "Nina.Kupriyanova";
             Secretary.Pass1 = "1992";
             Secretary.Pass2 = "540372";
+            Secretary.MainFormCaption = "Промнефть Секретарь";
             Director.Login = "Prohor.Benzinovsky";
             Director.Pass1 = "LEY925";
             Director.Pass2 = "849163";
+            Director.MainFormCaption = "Промнефть Директор";
         }
 
-        private void bOK_Click(object sender, EventArgs e)
+        private void SetCurrentMode()
         {
-            string inLogin = tbLogin.Text;
-            string inPassword = tbPassword.Text;
-            if (inLogin == CurrentMode.Login &&
-                (inPassword == CurrentMode.Pass1 || inPassword == CurrentMode.Pass2))
-            {
-                MainForm main = new MainForm();
-                this.Hide();
-                main.Show();                
-            }
+            if (File.Exists("Coolman.txt"))
+                CurrentMode = Director;
+            else
+                CurrentMode = Secretary;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -57,12 +56,7 @@ namespace SecretaryApp
             //ThemeResolutionService.ApplicationThemeName = "HighContrastBlack";
 
             FillLoginPassData();
-            CurrentMode = Secretary;
-        }
-
-        private void bLoginChecker_Click(object sender, EventArgs e)
-        {
-            bLoginChecker.ImageIndex++;
+            SetCurrentMode();
         }
 
         private void tbLogin_TextChanged(object sender, EventArgs e)
@@ -80,5 +74,19 @@ namespace SecretaryApp
             else
                 lPassChecker.ImageIndex = 1;
         }
+
+        private void bOK_Click(object sender, EventArgs e)
+        {
+            string inLogin = tbLogin.Text;
+            string inPassword = tbPassword.Text;
+            if (inLogin == CurrentMode.Login &&
+                (inPassword == CurrentMode.Pass1 || inPassword == CurrentMode.Pass2))
+            {
+                MainForm main = new MainForm(this);
+                this.Hide();
+                main.Show();
+            }
+        }
+
     }
 }

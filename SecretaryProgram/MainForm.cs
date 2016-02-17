@@ -20,10 +20,18 @@ namespace SecretaryApp
     public partial class MainForm : Telerik.WinControls.UI.RadForm
     {
         MailBox Mail = new MailBox();
+        LoginForm parentForm;
 
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public MainForm(LoginForm _parentForm)
+        {
+            parentForm = _parentForm;            
+            InitializeComponent();
+            this.Text = parentForm.CurrentMode.MainFormCaption;
         }
         
         private void MainForm_Load(object sender, EventArgs e)
@@ -38,6 +46,13 @@ namespace SecretaryApp
             CreateSlideViewerRotator_Load(sender, e);
 
             AddTextToDocs();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //this.Close();
+            //Application.Exit();   // <- this shit also works
+            parentForm.Close();
         }
 
         private void CreateSlideViewerRotator_Load(object sender, EventArgs e)
