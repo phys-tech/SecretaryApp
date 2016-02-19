@@ -104,7 +104,7 @@
             this.pageViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageViewMain.Location = new System.Drawing.Point(0, 104);
             this.pageViewMain.Name = "pageViewMain";
-            this.pageViewMain.SelectedPage = this.pageGallery;
+            this.pageViewMain.SelectedPage = this.pageDocs;
             this.pageViewMain.Size = new System.Drawing.Size(1022, 588);
             this.pageViewMain.TabIndex = 2;
             this.pageViewMain.Text = "PageView Main";
