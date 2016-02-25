@@ -22,6 +22,7 @@ namespace SecretaryApp
 
         private LoginPass Secretary;
         private LoginPass Director;
+        private LoginPass SpeedyPatch;
         public LoginPass CurrentMode;
 
         public LoginForm()
@@ -39,12 +40,17 @@ namespace SecretaryApp
             Director.Pass1 = "LEY925";
             Director.Pass2 = "849163";
             Director.MainFormCaption = "Промнефть Директор";
+            SpeedyPatch.Login = "1";
+            SpeedyPatch.Pass1 = "1";
+            SpeedyPatch.MainFormCaption = "ТЕстовый сцуко прогон";
         }
 
         private void SetCurrentMode()
         {
             if (File.Exists("Coolman.txt"))
                 CurrentMode = Director;
+            else if (File.Exists("SuperPatcher.txt"))
+                CurrentMode = SpeedyPatch;
             else
                 CurrentMode = Secretary;
         }

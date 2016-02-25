@@ -64,6 +64,7 @@
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.panelDocs = new Telerik.WinControls.UI.RadPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).BeginInit();
             this.pageViewMain.SuspendLayout();
             this.pageMail.SuspendLayout();
@@ -92,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelDocs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -334,7 +336,7 @@
             this.gridViewContacts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gridViewContacts.Location = new System.Drawing.Point(0, 42);
             // 
-            // 
+            // gridViewContacts
             // 
             this.gridViewContacts.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewContacts.MasterTemplate.AllowAddNewRow = false;
@@ -376,6 +378,7 @@
             // 
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
             this.pageDocs.Controls.Add(this.rtbDocs);
+            this.pageDocs.Controls.Add(this.panelDocs);
             this.pageDocs.Location = new System.Drawing.Point(10, 37);
             this.pageDocs.Name = "pageDocs";
             this.pageDocs.Size = new System.Drawing.Size(1001, 540);
@@ -386,9 +389,9 @@
             this.rtbDocs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbDocs.HyperlinkToolTipFormatString = null;
             this.rtbDocs.IsReadOnly = true;
-            this.rtbDocs.Location = new System.Drawing.Point(0, 0);
+            this.rtbDocs.Location = new System.Drawing.Point(0, 42);
             this.rtbDocs.Name = "rtbDocs";
-            this.rtbDocs.Size = new System.Drawing.Size(1001, 540);
+            this.rtbDocs.Size = new System.Drawing.Size(1001, 498);
             this.rtbDocs.TabIndex = 0;
             this.rtbDocs.Text = "radRichTextBox1";
             // 
@@ -415,6 +418,17 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
+            // 
+            // panelDocs
+            // 
+            this.panelDocs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDocs.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panelDocs.Location = new System.Drawing.Point(0, 0);
+            this.panelDocs.Name = "panelDocs";
+            this.panelDocs.Size = new System.Drawing.Size(1001, 42);
+            this.panelDocs.TabIndex = 3;
+            this.panelDocs.Text = "Внутренние инструкции ЗАО \"ПромНефть Россия\"";
+            this.panelDocs.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -465,6 +479,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelDocs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -500,5 +515,6 @@
         private Telerik.WinControls.UI.RadPanel panelPhotos;
         private Telerik.WinControls.UI.RadButton bPrevButton;
         private Telerik.WinControls.UI.RadButton bNextButton;
+        private Telerik.WinControls.UI.RadPanel panelDocs;
     }
 }
