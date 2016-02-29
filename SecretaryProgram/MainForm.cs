@@ -44,8 +44,8 @@ namespace SecretaryApp
             FillContactsData();
             FillMailData();
             CreateSlideViewerRotator_Load(sender, e);
-
             AddTextToDocs();
+            pageViewMain.SelectedPage = pageMail;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -165,6 +165,7 @@ namespace SecretaryApp
                 tbTheme.Text = Mail.Folders[folder].LetterList[index].Theme;
                 tbDate.Text = Mail.Folders[folder].LetterList[index].Date.ToLongDateString();
                 rtbMailContent.Document.Insert(Mail.Folders[folder].LetterList[index].Text, style);
+                lSender.Text = (new List<string>(){"Исходящие", "Черновики"}.Contains(folder) ) ? ("Кому:") : ("От кого:");
             }
         }
 
