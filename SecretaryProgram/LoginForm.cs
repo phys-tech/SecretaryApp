@@ -67,6 +67,8 @@ namespace SecretaryApp
                 CurrentMode = SpeedyPatch;
             else
                 CurrentMode = Secretary;
+
+            lForgotPassword.Visible = (CurrentMode == Secretary);
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -105,6 +107,12 @@ namespace SecretaryApp
                 this.Hide();
                 main.Show();
             }
+        }
+
+        private void lForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TooltipPassword.Show("Год основания компании", lForgotPassword, 30, 20, 1000);
+            TooltipPassword.Show("Год основания компании", lForgotPassword, 30, 20, 1000);
         }
 
     }

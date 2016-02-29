@@ -40,6 +40,8 @@
             this.lLogin = new Telerik.WinControls.UI.RadLabel();
             this.tbPassword = new Telerik.WinControls.UI.RadTextBox();
             this.tbLogin = new Telerik.WinControls.UI.RadTextBox();
+            this.lForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.TooltipPassword = new System.Windows.Forms.ToolTip(this.components);
             this.pLoginWindowWhole.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lPassChecker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOK)).BeginInit();
@@ -60,6 +62,7 @@
             // 
             // pLoginWindowWhole
             // 
+            this.pLoginWindowWhole.Controls.Add(this.lForgotPassword);
             this.pLoginWindowWhole.Controls.Add(this.lPassChecker);
             this.pLoginWindowWhole.Controls.Add(this.bOK);
             this.pLoginWindowWhole.Controls.Add(this.lLoginChecker);
@@ -90,7 +93,7 @@
             // 
             this.bOK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bOK.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bOK.Location = new System.Drawing.Point(300, 288);
+            this.bOK.Location = new System.Drawing.Point(300, 318);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(200, 60);
             this.bOK.TabIndex = 12;
@@ -153,6 +156,28 @@
             this.tbLogin.TabStop = false;
             this.tbLogin.TextChanged += new System.EventHandler(this.tbLogin_TextChanged);
             // 
+            // lForgotPassword
+            // 
+            this.lForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lForgotPassword.AutoSize = true;
+            this.lForgotPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lForgotPassword.Location = new System.Drawing.Point(341, 244);
+            this.lForgotPassword.Name = "lForgotPassword";
+            this.lForgotPassword.Size = new System.Drawing.Size(126, 21);
+            this.lForgotPassword.TabIndex = 14;
+            this.lForgotPassword.TabStop = true;
+            this.lForgotPassword.Text = "Забыли пароль?";
+            this.lForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lForgotPassword_LinkClicked);
+            // 
+            // TooltipPassword
+            // 
+            this.TooltipPassword.AutoPopDelay = 5000;
+            this.TooltipPassword.InitialDelay = 500;
+            this.TooltipPassword.IsBalloon = true;
+            this.TooltipPassword.ReshowDelay = 100;
+            this.TooltipPassword.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.TooltipPassword.ToolTipTitle = "Подсказка";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,5 +225,7 @@
         private Telerik.WinControls.UI.RadButton bOK;
         private Telerik.WinControls.UI.RadLabel lPassChecker;
         private Telerik.WinControls.UI.RadLabel lLoginChecker;
+        private System.Windows.Forms.LinkLabel lForgotPassword;
+        private System.Windows.Forms.ToolTip TooltipPassword;
     }
 }
