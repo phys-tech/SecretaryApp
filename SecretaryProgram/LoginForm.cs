@@ -12,12 +12,34 @@ namespace SecretaryApp
 {
     public partial class LoginForm : Telerik.WinControls.UI.RadForm
     {
-        public struct LoginPass
+        public class LoginPass
         {
-            public string Login;
-            public string Pass1;
-            public string Pass2;
+            private string Login;
+            private string Pass1;
+            private string Pass2;
             public string MainFormCaption;
+
+            public LoginPass(string login, string pass1, string pass2, string caption)
+            {
+                Login = login;
+                Pass1 = pass1;
+                Pass2 = pass2;
+                MainFormCaption = caption;
+            }
+
+            public bool CheckLogin(string TypedLogin)
+            {
+                string caseLessLogin = TypedLogin.ToLowerInvariant();
+                return (Login == caseLessLogin);
+            }
+
+            public bool CheckPassword(string TypedPassword)
+            {
+                if (TypedPassword == Pass1 || TypedPassword == Pass2)
+                    return true;
+                else 
+                    return false;
+            }
         }
 
         private LoginPass Secretary;
@@ -32,17 +54,9 @@ namespace SecretaryApp
 
         private void FillLoginPassData()
         {
-            Secretary.Login = "Nina.Kupriyanova";
-            Secretary.Pass1 = "1992";
-            Secretary.Pass2 = "540372";
-            Secretary.MainFormCaption = "Промнефть Секретарь";
-            Director.Login = "Prohor.Benzinovsky";
-            Director.Pass1 = "LEY925";
-            Director.Pass2 = "849163";
-            Director.MainFormCaption = "Промнефть Директор";
-            SpeedyPatch.Login = "1";
-            SpeedyPatch.Pass1 = "1";
-            SpeedyPatch.MainFormCaption = "ТЕстовый сцуко прогон";
+            Secretary = new LoginPass("nina.kupriyanova", "1992", "540372" , "Промнефть Секретарь");
+            Director = new LoginPass("prokhor.benzinovsky", "Ley.925", "849163", "Промнефть Директор");
+            SpeedyPatch = new LoginPass("1", "1", "2", "ТЕстовый сцуко прогон");
         }
 
         private void SetCurrentMode()
@@ -67,7 +81,7 @@ namespace SecretaryApp
 
         private void tbLogin_TextChanged(object sender, EventArgs e)
         {
-            if (tbLogin.Text == CurrentMode.Login)
+            if (CurrentMode.CheckLogin(tbLogin.Text))
                 lLoginChecker.ImageIndex = 0;
             else
                 lLoginChecker.ImageIndex = 1;
@@ -75,7 +89,7 @@ namespace SecretaryApp
 
         private void tbPassword_TextChanged(object sender, EventArgs e)
         {
-            if (tbPassword.Text == CurrentMode.Pass1 || tbPassword.Text == CurrentMode.Pass2)
+            if (CurrentMode.CheckPassword(tbPassword.Text))
                 lPassChecker.ImageIndex = 0;
             else
                 lPassChecker.ImageIndex = 1;
@@ -85,8 +99,7 @@ namespace SecretaryApp
         {
             string inLogin = tbLogin.Text;
             string inPassword = tbPassword.Text;
-            if (inLogin == CurrentMode.Login &&
-                (inPassword == CurrentMode.Pass1 || inPassword == CurrentMode.Pass2))
+            if ( CurrentMode.CheckLogin(inLogin) && CurrentMode.CheckPassword(inPassword) )
             {
                 MainForm main = new MainForm(this);
                 this.Hide();
