@@ -128,6 +128,19 @@ namespace SecretaryApp
             //data.Locale = standardizedCulture;
 
             gridViewContacts.DataSource = data;
+            try
+            {
+                gridViewContacts.Columns["П/п"].Width = 30;
+                gridViewContacts.Columns["Фамилия"].Width = 90;
+                gridViewContacts.Columns["Имя"].Width = 90;
+                gridViewContacts.Columns["Отчество"].Width = 90;
+                gridViewContacts.Columns["Должность"].Width = 230;
+                gridViewContacts.Columns["Дата рождения"].Width = 50;
+                gridViewContacts.Columns["Номер отдела"].Width = 50;
+            }
+            catch(Exception e)
+            {
+            }
         }
 
         private void FillMailData()
