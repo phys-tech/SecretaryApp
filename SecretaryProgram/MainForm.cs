@@ -31,7 +31,9 @@ namespace SecretaryApp
         {
             parentForm = _parentForm;            
             InitializeComponent();
-            this.Text = parentForm.CurrentMode.MainFormCaption;
+            this.Text = "Промнефть " + parentForm.CurrentMode.DutyPosition;
+            lUserPhoto.Text = parentForm.CurrentMode.DutyPosition;
+            lUserPhoto.ImageKey = parentForm.CurrentMode.DutyPosition + ".jpg";
         }
         
         private void MainForm_Load(object sender, EventArgs e)

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode1 = new Telerik.WinControls.UI.RadTreeNode();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode2 = new Telerik.WinControls.UI.RadTreeNode();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode3 = new Telerik.WinControls.UI.RadTreeNode();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode4 = new Telerik.WinControls.UI.RadTreeNode();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode5 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode6 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode7 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode8 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode9 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode10 = new Telerik.WinControls.UI.RadTreeNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
             this.pageViewMain = new Telerik.WinControls.UI.RadPageView();
             this.pageMail = new Telerik.WinControls.UI.RadPageViewPage();
             this.rtbMailContent = new Telerik.WinControls.RichTextBox.RadRichTextBox();
@@ -58,13 +58,13 @@
             this.panelOfficialTitle = new Telerik.WinControls.UI.RadPanel();
             this.pageDocs = new Telerik.WinControls.UI.RadPageViewPage();
             this.rtbDocs = new Telerik.WinControls.RichTextBox.RadRichTextBox();
+            this.panelDocs = new Telerik.WinControls.UI.RadPanel();
             this.panelLogo = new Telerik.WinControls.UI.RadPanel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.panelDocs = new Telerik.WinControls.UI.RadPanel();
+            this.lUserPhoto = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).BeginInit();
             this.pageViewMain.SuspendLayout();
             this.pageMail.SuspendLayout();
@@ -90,10 +90,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelOfficialTitle)).BeginInit();
             this.pageDocs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rtbDocs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelDocs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelDocs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUserPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,30 +216,30 @@
             this.tvMailbox.ForeColor = System.Drawing.Color.Black;
             this.tvMailbox.Location = new System.Drawing.Point(0, 0);
             this.tvMailbox.Name = "tvMailbox";
-            radTreeNode1.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode1.Expanded = true;
-            radTreeNode1.Name = "Inbox";
-            radTreeNode1.Text = "Входящие";
-            radTreeNode2.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode2.Expanded = true;
-            radTreeNode2.Name = "Sent";
-            radTreeNode2.Text = "Исходящие";
-            radTreeNode3.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode3.Name = "Drafts";
-            radTreeNode3.Text = "Черновики";
-            radTreeNode4.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode4.Expanded = true;
-            radTreeNode4.Name = "Spam";
-            radTreeNode4.Text = "Спам";
-            radTreeNode5.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode5.Name = "Deleted";
-            radTreeNode5.Text = "Корзина";
+            radTreeNode6.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode6.Expanded = true;
+            radTreeNode6.Name = "Inbox";
+            radTreeNode6.Text = "Входящие";
+            radTreeNode7.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode7.Expanded = true;
+            radTreeNode7.Name = "Sent";
+            radTreeNode7.Text = "Исходящие";
+            radTreeNode8.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode8.Name = "Drafts";
+            radTreeNode8.Text = "Черновики";
+            radTreeNode9.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode9.Expanded = true;
+            radTreeNode9.Name = "Spam";
+            radTreeNode9.Text = "Спам";
+            radTreeNode10.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode10.Name = "Deleted";
+            radTreeNode10.Text = "Корзина";
             this.tvMailbox.Nodes.AddRange(new Telerik.WinControls.UI.RadTreeNode[] {
-            radTreeNode1,
-            radTreeNode2,
-            radTreeNode3,
-            radTreeNode4,
-            radTreeNode5});
+            radTreeNode6,
+            radTreeNode7,
+            radTreeNode8,
+            radTreeNode9,
+            radTreeNode10});
             this.tvMailbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tvMailbox.ShowLines = true;
             this.tvMailbox.Size = new System.Drawing.Size(335, 540);
@@ -275,9 +276,8 @@
             // 
             this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "Cat4.jpg");
-            this.imageList.Images.SetKeyName(1, "Cat5.jpg");
-            this.imageList.Images.SetKeyName(2, "Cat6.jpg");
+            this.imageList.Images.SetKeyName(0, "Директор.jpg");
+            this.imageList.Images.SetKeyName(1, "Секретарь.jpg");
             // 
             // panelPhotos
             // 
@@ -336,7 +336,7 @@
             this.gridViewContacts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gridViewContacts.Location = new System.Drawing.Point(0, 42);
             // 
-            // gridViewContacts
+            // 
             // 
             this.gridViewContacts.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewContacts.MasterTemplate.AllowAddNewRow = false;
@@ -347,9 +347,9 @@
             this.gridViewContacts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.gridViewContacts.MasterTemplate.EnableFiltering = true;
             this.gridViewContacts.MasterTemplate.EnableGrouping = false;
-            sortDescriptor1.PropertyName = "column1";
+            sortDescriptor2.PropertyName = "column1";
             this.gridViewContacts.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
+            sortDescriptor2});
             this.gridViewContacts.Name = "gridViewContacts";
             this.gridViewContacts.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
@@ -395,8 +395,20 @@
             this.rtbDocs.TabIndex = 0;
             this.rtbDocs.Text = "radRichTextBox1";
             // 
+            // panelDocs
+            // 
+            this.panelDocs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDocs.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panelDocs.Location = new System.Drawing.Point(0, 0);
+            this.panelDocs.Name = "panelDocs";
+            this.panelDocs.Size = new System.Drawing.Size(1001, 42);
+            this.panelDocs.TabIndex = 3;
+            this.panelDocs.Text = "Внутренние инструкции ЗАО \"ПромНефть Россия\"";
+            this.panelDocs.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.lUserPhoto);
             this.panelLogo.Controls.Add(this.pbLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.EnableTheming = false;
@@ -419,16 +431,21 @@
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
             // 
-            // panelDocs
+            // lUserPhoto
             // 
-            this.panelDocs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDocs.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panelDocs.Location = new System.Drawing.Point(0, 0);
-            this.panelDocs.Name = "panelDocs";
-            this.panelDocs.Size = new System.Drawing.Size(1001, 42);
-            this.panelDocs.TabIndex = 3;
-            this.panelDocs.Text = "Внутренние инструкции ЗАО \"ПромНефть Россия\"";
-            this.panelDocs.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lUserPhoto.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lUserPhoto.AutoSize = false;
+            this.lUserPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.lUserPhoto.ForeColor = System.Drawing.Color.White;
+            this.lUserPhoto.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lUserPhoto.ImageList = this.imageList;
+            this.lUserPhoto.ImageScalingSize = new System.Drawing.Size(105, 81);
+            this.lUserPhoto.Location = new System.Drawing.Point(877, 1);
+            this.lUserPhoto.Name = "lUserPhoto";
+            this.lUserPhoto.Size = new System.Drawing.Size(146, 102);
+            this.lUserPhoto.TabIndex = 6;
+            this.lUserPhoto.Text = "Секретарь";
+            this.lUserPhoto.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             // 
             // MainForm
             // 
@@ -476,10 +493,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelOfficialTitle)).EndInit();
             this.pageDocs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rtbDocs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelDocs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelDocs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUserPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -503,7 +521,6 @@
         private Telerik.WinControls.UI.RadTreeView tvMailbox;
         private Telerik.WinControls.RichTextBox.RadRichTextBox rtbMailContent;
         private Telerik.WinControls.RichTextBox.RadRichTextBox rtbDocs;
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private Telerik.WinControls.UI.RadPanel pMailContents;
         private Telerik.WinControls.UI.RadTextBox tbDate;
         private Telerik.WinControls.UI.RadTextBox tbTheme;
@@ -516,5 +533,6 @@
         private Telerik.WinControls.UI.RadButton bPrevButton;
         private Telerik.WinControls.UI.RadButton bNextButton;
         private Telerik.WinControls.UI.RadPanel panelDocs;
+        private Telerik.WinControls.UI.RadLabel lUserPhoto;
     }
 }
