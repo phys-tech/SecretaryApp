@@ -131,12 +131,15 @@ namespace SecretaryApp
             try
             {
                 gridViewContacts.Columns["П/п"].Width = 30;
-                gridViewContacts.Columns["Фамилия"].Width = 90;
-                gridViewContacts.Columns["Имя"].Width = 90;
-                gridViewContacts.Columns["Отчество"].Width = 90;
+                gridViewContacts.Columns["Фамилия"].Width = 80;
+                gridViewContacts.Columns["Имя"].Width = 80;
+                gridViewContacts.Columns["Отчество"].Width = 80;
                 gridViewContacts.Columns["Должность"].Width = 230;
-                gridViewContacts.Columns["Дата рождения"].Width = 50;
-                gridViewContacts.Columns["Номер отдела"].Width = 50;
+                gridViewContacts.Columns["Дата рождения"].Width = 40;
+                gridViewContacts.Columns["Уровень доступа"].Width = 40;
+                gridViewContacts.Columns["Название отдела"].Width = 100;
+                gridViewContacts.Columns["Дата рождения"].TextAlignment = ContentAlignment.MiddleCenter;
+                gridViewContacts.Columns["Уровень доступа"].TextAlignment = ContentAlignment.MiddleCenter;
             }
             catch(Exception e)
             {

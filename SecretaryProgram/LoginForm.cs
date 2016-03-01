@@ -17,14 +17,16 @@ namespace SecretaryApp
             private string Login;
             private string Pass1;
             private string Pass2;
+            private string Hint;
             public string MainFormCaption;
 
-            public LoginPass(string login, string pass1, string pass2, string caption)
+            public LoginPass(string login, string pass1, string pass2, string caption, string hint)
             {
                 Login = login;
                 Pass1 = pass1;
                 Pass2 = pass2;
                 MainFormCaption = caption;
+                Hint = hint;
             }
 
             public bool CheckLogin(string TypedLogin)
@@ -40,6 +42,10 @@ namespace SecretaryApp
                 else 
                     return false;
             }
+            public string GetHint()
+            {
+                return Hint;
+            }
         }
 
         private LoginPass Secretary;
@@ -54,9 +60,9 @@ namespace SecretaryApp
 
         private void FillLoginPassData()
         {
-            Secretary = new LoginPass("nina.kupriyanova", "1992", "540372" , "Промнефть Секретарь");
-            Director = new LoginPass("prokhor.benzinovsky", "Ley.925", "849163", "Промнефть Директор");
-            SpeedyPatch = new LoginPass("1", "1", "2", "ТЕстовый сцуко прогон");
+            Secretary = new LoginPass("nina.kupriyanova", "1992", "540372", "Промнефть Секретарь", "Год основания компании");
+            Director = new LoginPass("prokhor.benzinovsky", "Ley.925", "849163", "Промнефть Директор", "Любимый алкогольный напиток");
+            SpeedyPatch = new LoginPass("1", "1", "2", "ТЕстовый сцуко прогон", "Пароль - 1 или 2");
         }
 
         private void SetCurrentMode()
@@ -67,8 +73,6 @@ namespace SecretaryApp
                 CurrentMode = SpeedyPatch;
             else
                 CurrentMode = Secretary;
-
-            lForgotPassword.Visible = (CurrentMode == Secretary);
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -111,8 +115,8 @@ namespace SecretaryApp
 
         private void lForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            TooltipPassword.Show("Год основания компании", lForgotPassword, 30, 20, 1000);
-            TooltipPassword.Show("Год основания компании", lForgotPassword, 30, 20, 1000);
+            TooltipPassword.Show(CurrentMode.GetHint(), lForgotPassword, 30, 20, 1000);
+            TooltipPassword.Show(CurrentMode.GetHint(), lForgotPassword, 30, 20, 1000);
         }
 
     }
