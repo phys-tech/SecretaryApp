@@ -19,14 +19,16 @@ namespace SecretaryApp
             private string Pass2;
             private string Hint;
             public string DutyPosition;
+            public string GalleryCaption;
 
-            public LoginPass(string login, string pass1, string pass2, string caption, string hint)
+            public LoginPass(string login, string pass1, string pass2, string caption, string hint, string gallery)
             {
                 Login = login;
                 Pass1 = pass1;
                 Pass2 = pass2;
                 DutyPosition = caption;
                 Hint = hint;
+                GalleryCaption = gallery;
             }
 
             public bool CheckLogin(string TypedLogin)
@@ -60,9 +62,9 @@ namespace SecretaryApp
 
         private void FillLoginPassData()
         {
-            Secretary = new LoginPass("nina.kupriyanova", "1992", "540372", "Секретарь", "Год основания компании");
-            Director = new LoginPass("prokhor.benzinovsky", "Ley.925", "849163", "Директор", "Любимый алкогольный напиток");
-            SpeedyPatch = new LoginPass("1", "1", "2", "Тeстовик ", "Пароль - 1 или 2");
+            Secretary = new LoginPass("nina.kupriyanova", "1992", "540372", "Секретарь", "Год основания компании", "Фотографии офисов ЗАО \"ПромНефть Россия\"");
+            Director = new LoginPass("prokhor.benzinovsky", "Ley.925", "849163", "Директор", "Любимый алкогольный напиток", "Бизнес-аналитика, отчеты");
+            SpeedyPatch = new LoginPass("1", "1", "2", "Тeстовик ", "Пароль - 1 или 2", "Много разных фоток");
         }
 
         private void SetCurrentMode()

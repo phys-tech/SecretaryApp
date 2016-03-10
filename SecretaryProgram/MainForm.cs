@@ -34,6 +34,7 @@ namespace SecretaryApp
             this.Text = "Промнефть " + parentForm.CurrentMode.DutyPosition;
             lUserPhoto.Text = parentForm.CurrentMode.DutyPosition;
             lUserPhoto.ImageKey = parentForm.CurrentMode.DutyPosition + ".jpg";
+            panelPhotos.Text = parentForm.CurrentMode.GalleryCaption;
         }
         
         private void MainForm_Load(object sender, EventArgs e)

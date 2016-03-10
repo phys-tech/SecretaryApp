@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode6 = new Telerik.WinControls.UI.RadTreeNode();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode7 = new Telerik.WinControls.UI.RadTreeNode();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode8 = new Telerik.WinControls.UI.RadTreeNode();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode9 = new Telerik.WinControls.UI.RadTreeNode();
-            Telerik.WinControls.UI.RadTreeNode radTreeNode10 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode1 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode2 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode3 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode4 = new Telerik.WinControls.UI.RadTreeNode();
+            Telerik.WinControls.UI.RadTreeNode radTreeNode5 = new Telerik.WinControls.UI.RadTreeNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.pageViewMain = new Telerik.WinControls.UI.RadPageView();
             this.pageMail = new Telerik.WinControls.UI.RadPageViewPage();
             this.rtbMailContent = new Telerik.WinControls.RichTextBox.RadRichTextBox();
@@ -60,11 +60,11 @@
             this.rtbDocs = new Telerik.WinControls.RichTextBox.RadRichTextBox();
             this.panelDocs = new Telerik.WinControls.UI.RadPanel();
             this.panelLogo = new Telerik.WinControls.UI.RadPanel();
+            this.lUserPhoto = new Telerik.WinControls.UI.RadLabel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
-            this.lUserPhoto = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).BeginInit();
             this.pageViewMain.SuspendLayout();
             this.pageMail.SuspendLayout();
@@ -93,8 +93,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelDocs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).BeginInit();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUserPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +112,7 @@
             this.pageViewMain.TabIndex = 2;
             this.pageViewMain.Text = "PageView Main";
             this.pageViewMain.ThemeName = "ControlDefault";
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.pageViewMain.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.Scroll;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.pageViewMain.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.pageViewMain.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Center;
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.pageViewMain.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.None;
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.pageViewMain.GetChildAt(0))).ItemContentOrientation = Telerik.WinControls.UI.PageViewContentOrientation.Auto;
@@ -216,30 +216,30 @@
             this.tvMailbox.ForeColor = System.Drawing.Color.Black;
             this.tvMailbox.Location = new System.Drawing.Point(0, 0);
             this.tvMailbox.Name = "tvMailbox";
-            radTreeNode6.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode6.Expanded = true;
-            radTreeNode6.Name = "Inbox";
-            radTreeNode6.Text = "Входящие";
-            radTreeNode7.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode7.Expanded = true;
-            radTreeNode7.Name = "Sent";
-            radTreeNode7.Text = "Исходящие";
-            radTreeNode8.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode8.Name = "Drafts";
-            radTreeNode8.Text = "Черновики";
-            radTreeNode9.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode9.Expanded = true;
-            radTreeNode9.Name = "Spam";
-            radTreeNode9.Text = "Спам";
-            radTreeNode10.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
-            radTreeNode10.Name = "Deleted";
-            radTreeNode10.Text = "Корзина";
+            radTreeNode1.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode1.Expanded = true;
+            radTreeNode1.Name = "Inbox";
+            radTreeNode1.Text = "Входящие";
+            radTreeNode2.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode2.Expanded = true;
+            radTreeNode2.Name = "Sent";
+            radTreeNode2.Text = "Исходящие";
+            radTreeNode3.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode3.Name = "Drafts";
+            radTreeNode3.Text = "Черновики";
+            radTreeNode4.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode4.Expanded = true;
+            radTreeNode4.Name = "Spam";
+            radTreeNode4.Text = "Спам";
+            radTreeNode5.CheckType = Telerik.WinControls.UI.CheckType.CheckBox;
+            radTreeNode5.Name = "Deleted";
+            radTreeNode5.Text = "Корзина";
             this.tvMailbox.Nodes.AddRange(new Telerik.WinControls.UI.RadTreeNode[] {
-            radTreeNode6,
-            radTreeNode7,
-            radTreeNode8,
-            radTreeNode9,
-            radTreeNode10});
+            radTreeNode1,
+            radTreeNode2,
+            radTreeNode3,
+            radTreeNode4,
+            radTreeNode5});
             this.tvMailbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tvMailbox.ShowLines = true;
             this.tvMailbox.Size = new System.Drawing.Size(335, 540);
@@ -347,9 +347,9 @@
             this.gridViewContacts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.gridViewContacts.MasterTemplate.EnableFiltering = true;
             this.gridViewContacts.MasterTemplate.EnableGrouping = false;
-            sortDescriptor2.PropertyName = "column1";
+            sortDescriptor1.PropertyName = "column1";
             this.gridViewContacts.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
+            sortDescriptor1});
             this.gridViewContacts.Name = "gridViewContacts";
             this.gridViewContacts.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
@@ -418,19 +418,6 @@
             this.panelLogo.TabIndex = 5;
             this.panelLogo.ThemeName = "ControlDefault";
             // 
-            // pbLogo
-            // 
-            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(224, 11);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(573, 82);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbLogo.TabIndex = 4;
-            this.pbLogo.TabStop = false;
-            // 
             // lUserPhoto
             // 
             this.lUserPhoto.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -446,6 +433,19 @@
             this.lUserPhoto.TabIndex = 6;
             this.lUserPhoto.Text = "Секретарь";
             this.lUserPhoto.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Location = new System.Drawing.Point(224, 11);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(573, 82);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
             // 
             // MainForm
             // 
@@ -496,8 +496,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelDocs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelLogo)).EndInit();
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUserPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
