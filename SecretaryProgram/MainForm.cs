@@ -90,7 +90,8 @@ namespace SecretaryApp
             int newWidth = (int)((double)image.Width * ratio);
             int newHeight = (int)((double)image.Height * ratio);
             imageItem.Image = image.GetThumbnailImage(newWidth, newHeight, null, IntPtr.Zero);
-            imageItem.Alignment = ContentAlignment.MiddleCenter;
+            //imageItem.Alignment = ContentAlignment.MiddleCenter;  // doesn't work
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(imageItem.GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleCenter;
             return imageItem;
         }
 
@@ -118,7 +119,6 @@ namespace SecretaryApp
             OleDbDataAdapter OleDataAdapter = new OleDbDataAdapter(DbCommand);
             DataTable data = new DataTable();
             OleDataAdapter.Fill(data);
-            //data.Columns["Дата рождения"].Cells
 
             CultureInfo standardizedCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
             standardizedCulture.DateTimeFormat.DateSeparator = ".";
@@ -128,7 +128,6 @@ namespace SecretaryApp
             standardizedCulture.DateTimeFormat.LongTimePattern = "";
             Thread.CurrentThread.CurrentCulture = standardizedCulture;
             Thread.CurrentThread.CurrentUICulture = standardizedCulture;
-            //data.Locale = standardizedCulture;
 
             gridViewContacts.DataSource = data;
             try
