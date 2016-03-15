@@ -33,6 +33,7 @@
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.ilButtons = new System.Windows.Forms.ImageList(this.components);
             this.pLoginWindowWhole = new System.Windows.Forms.Panel();
+            this.lForgotPassword = new System.Windows.Forms.LinkLabel();
             this.lPassChecker = new Telerik.WinControls.UI.RadLabel();
             this.bOK = new Telerik.WinControls.UI.RadButton();
             this.lLoginChecker = new Telerik.WinControls.UI.RadLabel();
@@ -40,7 +41,6 @@
             this.lLogin = new Telerik.WinControls.UI.RadLabel();
             this.tbPassword = new Telerik.WinControls.UI.RadTextBox();
             this.tbLogin = new Telerik.WinControls.UI.RadTextBox();
-            this.lForgotPassword = new System.Windows.Forms.LinkLabel();
             this.TooltipPassword = new System.Windows.Forms.ToolTip(this.components);
             this.pLoginWindowWhole.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lPassChecker)).BeginInit();
@@ -75,6 +75,19 @@
             this.pLoginWindowWhole.Name = "pLoginWindowWhole";
             this.pLoginWindowWhole.Size = new System.Drawing.Size(792, 570);
             this.pLoginWindowWhole.TabIndex = 10;
+            // 
+            // lForgotPassword
+            // 
+            this.lForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lForgotPassword.AutoSize = true;
+            this.lForgotPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lForgotPassword.Location = new System.Drawing.Point(341, 244);
+            this.lForgotPassword.Name = "lForgotPassword";
+            this.lForgotPassword.Size = new System.Drawing.Size(126, 21);
+            this.lForgotPassword.TabIndex = 14;
+            this.lForgotPassword.TabStop = true;
+            this.lForgotPassword.Text = "Забыли пароль?";
+            this.lForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lForgotPassword_LinkClicked);
             // 
             // lPassChecker
             // 
@@ -127,11 +140,11 @@
             // 
             this.lLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lLogin.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lLogin.Location = new System.Drawing.Point(217, 156);
+            this.lLogin.Location = new System.Drawing.Point(193, 156);
             this.lLogin.Name = "lLogin";
-            this.lLogin.Size = new System.Drawing.Size(58, 25);
+            this.lLogin.Size = new System.Drawing.Size(92, 25);
             this.lLogin.TabIndex = 8;
-            this.lLogin.Text = "Логин:";
+            this.lLogin.Text = "Сотрудник:";
             // 
             // tbPassword
             // 
@@ -155,19 +168,6 @@
             this.tbLogin.TabIndex = 6;
             this.tbLogin.TabStop = false;
             this.tbLogin.TextChanged += new System.EventHandler(this.tbLogin_TextChanged);
-            // 
-            // lForgotPassword
-            // 
-            this.lForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lForgotPassword.AutoSize = true;
-            this.lForgotPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lForgotPassword.Location = new System.Drawing.Point(341, 244);
-            this.lForgotPassword.Name = "lForgotPassword";
-            this.lForgotPassword.Size = new System.Drawing.Size(126, 21);
-            this.lForgotPassword.TabIndex = 14;
-            this.lForgotPassword.TabStop = true;
-            this.lForgotPassword.Text = "Забыли пароль?";
-            this.lForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lForgotPassword_LinkClicked);
             // 
             // TooltipPassword
             // 
