@@ -185,6 +185,7 @@
             this.ClientSize = new System.Drawing.Size(792, 570);
             this.ControlBox = false;
             this.Controls.Add(this.pLoginWindowWhole);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
@@ -198,7 +199,9 @@
             this.ThemeName = "ControlDefault";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
             this.pLoginWindowWhole.ResumeLayout(false);
             this.pLoginWindowWhole.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lPassChecker)).EndInit();

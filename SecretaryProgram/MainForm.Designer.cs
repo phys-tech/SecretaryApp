@@ -455,6 +455,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.pageViewMain);
             this.Controls.Add(this.panelLogo);
+            this.KeyPreview = true;
             this.Name = "MainForm";
             // 
             // 
@@ -465,8 +466,9 @@
             this.ThemeName = "HighContrastBlack";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).EndInit();
             this.pageViewMain.ResumeLayout(false);
             this.pageMail.ResumeLayout(false);

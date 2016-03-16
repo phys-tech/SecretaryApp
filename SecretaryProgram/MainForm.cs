@@ -51,11 +51,22 @@ namespace SecretaryApp
             pageViewMain.SelectedPage = pageMail;
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            //this.Close();
+            if (e.Alt && e.Shift && e.KeyCode == Keys.M)
+            {                
+                parentForm.HiddenCloseActivated = true;
+                this.Close();
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!parentForm.HiddenCloseActivated)
+                e.Cancel = true;
+            else
+                parentForm.Close();
             //Application.Exit();   // <- this shit also works
-            parentForm.Close();
         }
 
         private void CreateSlideViewerRotator_Load(object sender, EventArgs e)

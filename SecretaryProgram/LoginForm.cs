@@ -54,10 +54,12 @@ namespace SecretaryApp
         private LoginPass Director;
         private LoginPass SpeedyPatch;
         public LoginPass CurrentMode;
+        public bool HiddenCloseActivated;
 
         public LoginForm()
         {
             InitializeComponent();
+            HiddenCloseActivated = false;
         }
 
         private void FillLoginPassData()
@@ -119,6 +121,23 @@ namespace SecretaryApp
         {
             TooltipPassword.Show(CurrentMode.GetHint(), lForgotPassword, 30, 20, 1000);
             TooltipPassword.Show(CurrentMode.GetHint(), lForgotPassword, 30, 20, 1000);
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!HiddenCloseActivated)
+                e.Cancel = true;
+        }
+
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.Shift && e.KeyCode == Keys.M)
+            {
+                HiddenCloseActivated = true;
+                this.Close();
+            }
+            else if (e.KeyCode == Keys.Enter)
+                bOK_Click(sender, e);
         }
 
     }
