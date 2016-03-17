@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
+            this.office2010BlackTheme = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.ilButtons = new System.Windows.Forms.ImageList(this.components);
             this.pLoginWindowWhole = new System.Windows.Forms.Panel();
             this.lForgotPassword = new System.Windows.Forms.LinkLabel();
@@ -42,6 +42,7 @@
             this.tbPassword = new Telerik.WinControls.UI.RadTextBox();
             this.tbLogin = new Telerik.WinControls.UI.RadTextBox();
             this.TooltipPassword = new System.Windows.Forms.ToolTip(this.components);
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.pLoginWindowWhole.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lPassChecker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOK)).BeginInit();
@@ -178,6 +179,10 @@
             this.TooltipPassword.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.TooltipPassword.ToolTipTitle = "Подсказка";
             // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,7 +223,7 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme;
         private System.Windows.Forms.ImageList ilButtons;
         private System.Windows.Forms.Panel pLoginWindowWhole;
         private Telerik.WinControls.UI.RadLabel lPassword;
@@ -230,5 +235,6 @@
         private Telerik.WinControls.UI.RadLabel lLoginChecker;
         private System.Windows.Forms.LinkLabel lForgotPassword;
         private System.Windows.Forms.ToolTip TooltipPassword;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }

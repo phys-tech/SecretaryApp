@@ -35,15 +35,16 @@ namespace SecretaryApp
             lUserPhoto.Text = parentForm.CurrentMode.DutyPosition;
             lUserPhoto.ImageKey = parentForm.CurrentMode.DutyPosition + ".jpg";
             panelPhotos.Text = parentForm.CurrentMode.GalleryCaption;
+
+            SetUpLocalization();
+            FillContactsData();
+            FillMailData();
+            CreateSlideViewerRotator();
+            AddTextToDocs();
         }
         
         private void MainForm_Load(object sender, EventArgs e)
         {
-            SetUpLocalization();
-            FillContactsData();
-            FillMailData();
-            CreateSlideViewerRotator_Load(sender, e);
-            AddTextToDocs();
             pageViewMain.SelectedPage = pageMail;
         }
 
@@ -65,7 +66,7 @@ namespace SecretaryApp
             //Application.Exit();   // <- this shit also works
         }
 
-        private void CreateSlideViewerRotator_Load(object sender, EventArgs e)
+        private void CreateSlideViewerRotator()
         {
             string myPicturesPath = ".";
             foreach (string fileName in Directory.GetFiles(myPicturesPath, "*.jpg"))

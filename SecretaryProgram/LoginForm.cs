@@ -55,11 +55,12 @@ namespace SecretaryApp
         private LoginPass SpeedyPatch;
         public LoginPass CurrentMode;
         public bool HiddenCloseActivated;
+        MainForm mainForm;
 
         public LoginForm()
         {
             InitializeComponent();
-            HiddenCloseActivated = false;
+            HiddenCloseActivated = false;            
         }
 
         private void FillLoginPassData()
@@ -87,6 +88,7 @@ namespace SecretaryApp
 
             FillLoginPassData();
             SetCurrentMode();
+            backgroundWorker.RunWorkerAsync();
         }
 
         private void tbLogin_TextChanged(object sender, EventArgs e)
@@ -111,9 +113,8 @@ namespace SecretaryApp
             string inPassword = tbPassword.Text;
             if ( CurrentMode.CheckLogin(inLogin) && CurrentMode.CheckPassword(inPassword) )
             {
-                MainForm main = new MainForm(this);
                 this.Hide();
-                main.Show();
+                mainForm.Show();
             }
         }
 
@@ -138,6 +139,11 @@ namespace SecretaryApp
             }
             else if (e.KeyCode == Keys.Enter)
                 bOK_Click(sender, e);
+        }
+
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            mainForm = new MainForm(this);
         }
 
     }
