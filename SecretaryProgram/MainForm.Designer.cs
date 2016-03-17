@@ -62,9 +62,6 @@
             this.panelLogo = new Telerik.WinControls.UI.RadPanel();
             this.lUserPhoto = new Telerik.WinControls.UI.RadLabel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
-            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             ((System.ComponentModel.ISupportInitialize)(this.pageViewMain)).BeginInit();
             this.pageViewMain.SuspendLayout();
             this.pageMail.SuspendLayout();
@@ -515,9 +512,6 @@
         private Telerik.WinControls.UI.RadGridView gridViewContacts;
         private System.Windows.Forms.ImageList imageList;
         private Telerik.WinControls.UI.RadRotator rotatorPhotos;
-        private Telerik.WinControls.Themes.HighContrastBlackTheme highContrastBlackTheme1;
-        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
-        private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
         private Telerik.WinControls.UI.RadPageViewPage pageDocs;
         private Telerik.WinControls.UI.RadPageViewPage pageMail;
         private Telerik.WinControls.UI.RadTreeView tvMailbox;
