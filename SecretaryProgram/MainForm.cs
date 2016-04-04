@@ -105,10 +105,10 @@ namespace SecretaryApp
             RadImageItem imageItem = new RadImageItem();
             Image image = Image.FromFile(path);
             // workaround to prevent using internal image thumbnail
-            //image.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
-            //image.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
+            image.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
+            image.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
             // calculate aspect ratio so image is not distorted
-            /*
+            
             double ratio = 0;
             if (image.Width < image.Height)
             {
@@ -120,9 +120,8 @@ namespace SecretaryApp
             }
             int newWidth = (int)((double)image.Width * ratio);
             int newHeight = (int)((double)image.Height * ratio);
-            imageItem.Image = image.GetThumbnailImage(newWidth, newHeight, null, IntPtr.Zero);
-             */
-            imageItem.Image = image;
+            imageItem.Image = image.GetThumbnailImage(newWidth, newHeight, null, IntPtr.Zero);            
+            //imageItem.Image = image;
             //imageItem.Alignment = ContentAlignment.MiddleCenter;  // doesn't work
             ((Telerik.WinControls.Primitives.ImagePrimitive)(imageItem.GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleCenter;
             return imageItem;
